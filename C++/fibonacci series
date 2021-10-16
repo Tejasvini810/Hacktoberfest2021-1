@@ -1,0 +1,51 @@
+/*
+The fibonacci series contains numbers in which each term is the sum of the previous two terms. This creates the following integer sequence −
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377…….
+*/
+
+/*
+Programs to Display Fibonacci Series
+There are two methods to display fibonacci series i.e. using dynamic programming and recursive programming. These are further explained as follows − 
+*/
+
+//Dynamic Programming
+
+#include<iostream>
+using namespace std;
+void fib(int n) {
+   int f[n];
+   int i;
+   f[0] = 0;
+   f[1] = 1;
+   for (i = 2; i < n; i++) {
+      f[i] = f[i-1] + f[i-2];
+   }
+   for (i = 0; i < n; i++) {
+      cout<<f[i]<<" ";
+   }
+}
+int main () {
+   int n = 10;
+   fib(n);
+   getchar();
+   return 0;
+}
+/*Recursive Programming
+Let us see how to display fibonacci series using recursion.
+*/
+#include<iostream>
+using namespace std;
+int fib(int n) {
+   if (n <= 1)
+   return n;
+   return fib(n-1) + fib(n-2);
+}
+int main () {
+   int n = 10, i;
+   for(i=0;i<n;i++)
+   cout<<fib(i)<<" ";
+   return 0;
+}
+
+//That's it!!
